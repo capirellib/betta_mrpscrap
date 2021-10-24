@@ -1,0 +1,160 @@
+<odoo>
+
+    <data>
+<!--  Vista tree  -->
+        <record id="view_betta_mrp_timeout_tree" model="ir.ui.view">
+            <field name="name">view.betta.mrp.timeout_tree</field>
+            <field name="model">betta.mrp.timeout</field>
+            <field name="arch" type="xml">
+                <tree string="Tiempo Ocioso">
+                    <field name="name"/>
+                    <field name="time_default"/>
+                    
+                </tree>
+            </field>
+        </record>
+
+
+<!--  Vista form  -->
+        <record id="view_betta_mrp_timeout_form" model="ir.ui.view">
+            <field name="name">view.betta.mrp.timeout.form</field>
+            <field name="model">betta.mrp.timeout</field>
+            <field name="arch" type="xml">
+                <form string="Tiempo Ocioso">
+                    <sheet>
+                    <header>
+
+                    </header>
+
+                        <group name="group_top">
+                            <group name="group_left">
+                                <field name="name"/>
+                                
+                            </group>
+                            <group name="group_right">
+                                <field name="time_default"/>
+                            </group>
+                        </group>           
+                    <!-- <button name="method" string="Acción" class="oe_highlight" type="object"/> -->
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+
+<!--  Acción para abrir vistas de los modelos  -->
+        <record model="ir.actions.act_window" id="betta_mrp_accion_timeout">
+            <field name="name">Tiempo Ocioso</field>
+            <field name="res_model">betta.mrp.timeout</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Detalles de Tiempo Ocioso
+                </p>
+                <p>
+                    Click 'Nuevo' para añadir nuevos tiempo 
+                </p>
+            </field>   
+
+        </record>
+<!--************************************************************************************-->
+<!--************************************************************************************-->
+        <record id="view_betta_mrp_timeoutwr_tree" model="ir.ui.view">
+            <field name="name">view.betta.mrp.timeoutwr.tree</field>
+            <field name="model">betta.mrp.timeoutwr</field>
+            <field name="arch" type="xml">
+
+                <field name="mrpworkorder"/>    
+                <tree string="Tiempo Ocioso">
+                    <!--<field name="name"/>-->
+                    
+                    <field name="time_out"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_betta_mrp_timeoutwr_form" model="ir.ui.view">
+            <field name="name">view.betta.mrp.timeoutwr.form</field>
+            <field name="model">betta.mrp.timeoutwr</field>
+            <field name="arch" type="xml">
+            
+                <form string="Combustible">
+                    <sheet>
+                        <header>..</header>
+
+                        <group name="group_top">
+                            <group name="group_left">
+                                <field name="name"/>
+                                <!--<field name="mrpworkorder_ids"/>-->
+                            </group>
+                            <group name="group_right">
+                                
+                            </group>
+                        </group>           
+                    </sheet>
+                
+                </form>
+            
+            
+            
+            </field>
+        </record>
+
+
+
+
+        
+
+
+
+        <record model="ir.actions.act_window" id="betta_mrp_accion_timeoutwr">
+            <field name="name">Tiempo Ocioso</field>
+            <field name="res_model">betta.mrp.timeoutwr</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Detalles de Tiempo Ocioso
+                </p>
+                <p>
+                    Click 'Nuevo' para añadir nuevos tiempo 
+                </p>
+            </field>   
+
+        </record>
+
+
+
+
+
+
+<!--  Menú item superior  -->
+
+        <menuitem id="menu_mrp_tiempoocioso"
+            name="Tiempo Ocioso"
+            action="betta_mrp_accion_timeoutwr"
+            parent="mrp.menu_mrp_configuration"
+            sequence="95"/>
+
+ <!--
+        <menuitem id="menu_view_resource_search_mrp"
+            action="mrp_workcenter_action"
+            groups="group_mrp_routings"
+            parent="menu_mrp_configuration"
+            sequence="90"/>
+     
+     <menuitem id="menu_mrp_routing_action"
+          action="mrp_routing_action"
+          parent="menu_mrp_configuration"
+          groups="group_mrp_routings"
+          sequence="100"/>-->
+
+
+<!--<menuitem name="Estacion de Servicio" id="betta_eess_app_.menu_root"/>-->
+<!--  Categorías de menú  -->
+<!--<menuitem name="Modelos" id="odoo_model_advanced.menu_1" parent="odoo_model_advanced.menu_root"/>-->
+<!--  Acciones del menú  -->
+
+
+</data>
+</odoo>

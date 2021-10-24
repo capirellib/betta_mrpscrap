@@ -1,35 +1,35 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "/opt/odoo/sources/betta_mrp_time_out",
+    'name': "BETTA MRP TIME",
 
     'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+        Agrega boton qeu cuenta el Tiempo Muerto en los
+        proyectos de Fabricacion""",
 
     'description': """
-        Long description of module's purpose
+        Control Tiempo muerto 
     """,
 
-    'author': "My Company",
-    'website': "http://www.yourcompany.com",
+    'author': "Betta ERP",
+    'website': "http://www.bettaerp.com",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/14.0/odoo/addons/base/data/ir_module_category_data.xml
     # for the full list
-    'category': 'Uncategorized',
+    'category': 'Manufacturing/Manufacturing',
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['mrp','base',],
 
     # always loaded
     'data': [
         # 'security/ir.model.access.csv',
         'views/views.xml',
-        'views/templates.xml',
+        #'views/time_out.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
-        'demo/demo.xml',
+        #'demo/demo.xml',
     ],
 }
