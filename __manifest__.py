@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "BETTA MRP TIME",
+    'name': "MRP Betta Tiempo Ocioso",
 
     'summary': """
-        Agrega boton qeu cuenta el Tiempo Muerto en los
-        proyectos de Fabricacion""",
+        Agrega Control en que los Operarios realizan otras tares indirectas al 
+        proceso de Fabricacion (Incremento en el costo del Proyecto)""",
 
     'description': """
-        Control Tiempo muerto 
+        Control Tiempo Ocioso  
     """,
 
-    'author': "Betta ERP",
+    'author': "Betta ERP - (Carlos E. Pirelli)",
     'website': "http://www.bettaerp.com",
 
     # Categories can be used to filter modules in modules listing
@@ -24,12 +24,17 @@
 
     # always loaded
     'data': [
-        # 'security/ir.model.access.csv',
+        
         'views/views.xml',
-        #'views/time_out.xml',
+        
     ],
     # only loaded in demonstration mode
     'demo': [
         #'demo/demo.xml',
     ],
+
+    'images': [
+        'static/description/icon.png',
+],
+
 }
