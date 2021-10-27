@@ -14,23 +14,14 @@ class MrpWorkorder(models.Model):
     time_out =fields.Float(
     'Duracion Ocioso', digits=(16, 2) , default = 0,
     help="Duracion Tiempo Ocioso (en minutes)" )
-
-
-
     show_ocio = fields.Integer(default=0)
-    
     #calc_ocio = fields.Boolean(default=True) ##Permite Iniciar o Detener el RELOJ
-
     instanteInicial = fields.Datetime()
 
-
     def _compute_timeout(self):
-        
         for order in self:
-            
             timeline_obj = self.env['mrp.workcenter.productivity']
             domain = [('workorder_id', 'in', self.ids)]   
-        
             self.time_out_total = 0
             #if self.time_out == 0 :
             for timeline in timeline_obj.search(domain):
@@ -53,6 +44,8 @@ class MrpWorkorder(models.Model):
 
 
     def button_finish(self):
+        if self.show_ocio == 2:
+            self.button_Ocio()
         self.show_ocio = 0
         return super().button_finish()
 
@@ -118,7 +111,10 @@ class MrpWorkorder(models.Model):
             tiempo1 = tiempo / timedelta(minutes=1)
             self.time_out = tiempo1 + self.time_out    
             self.show_ocio = 1
-            
+
+    
+
+
 #*********************************************************************************
 #*********************************************************************************
 

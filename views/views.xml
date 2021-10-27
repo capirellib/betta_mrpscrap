@@ -23,8 +23,10 @@
                 <button name="button_Ocio" type="object" string="Ocio Finalizar" 
                     class="btn-primary" icon="fa-times" attrs="{'invisible': [('show_ocio','!=',2)]}"/>    
 
+                 
             </xpath>
               
+
         </field>
     </record>
 
