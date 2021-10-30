@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "MRP Betta Tiempo Ocioso",
+    'name': "MRP Betta Desperdicios",
 
     'summary': """
-        Agrega Control en que los Operarios realizan otras tares indirectas al 
-        proceso de Fabricacion (Incremento en el costo del Proyecto)""",
+        Agrega mvimientos de desperdicio dede la Vista  
+        Ordenes de Trabajos """,
 
     'description': """
-        Control Tiempo Ocioso  
+        Control de Desperdicios dede Ordenes de Traabajo  
     """,
 
     'author': "Betta ERP - (Carlos E. Pirelli)",

@@ -6,76 +6,19 @@
         <field name="model">mrp.workorder</field>
         <field name="inherit_id" ref="mrp.mrp_production_workorder_tree_editable_view"/>
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='duration']" position="before">
-                
-                <field name="show_ocio" invisible = '1'/>
-                <field name="time_out" widget = 'float_time' readonly = '1' attrs="{'invisible': [('show_ocio', '=', 0)]}"/>    
-                <field name="time_out_total" widget="float_time"/>
-
-            </xpath>
-
+            
             <xpath expr="//button[@name='button_start']" position="after">
-                
-                <button name="button_Ocio" type="object" string="Ocio Inicio" 
-                    class="btn-light" icon="fa-clock-o" attrs="{'invisible':[('show_ocio','!=',1)]}"/>
-
-
-                <button name="button_Ocio" type="object" string="Ocio Finalizar" 
-                    class="btn-primary" icon="fa-times" attrs="{'invisible': [('show_ocio','!=',2)]}"/>    
-
-                 
-            </xpath>
-              
-
-        </field>
-    </record>
-
-    <record id="b_mrp_production_workorder_form_view" model="ir.ui.view">
-        <field name="name">b.mrp.production.work.order.form</field>
-        <field name="model">mrp.workorder</field>
-        <field name="inherit_id" ref="mrp.mrp_production_workorder_form_view_inherit"/>
-        
-        <field name="arch" type="xml">
-
-            <xpath expr="//page[@name='time_tracking']//tree/field[@name='duration']" position="before">
-                   
-                <field name="time_out" widget="float_time" sum="Total T.Ocioso"/>
-
-            </xpath>
-
-      
-        </field>
-    </record>
-
-    <record id="b_mrp_workcenter_productivity_tree_view" model="ir.ui.view">
-        <field name="name">b_mrp_workcenter_productivity_tree_view</field>
-        <field name="model">mrp.workcenter.productivity</field>
-        <field name="inherit_id" ref="mrp.oee_tree_view"/>
-        <field name="arch" type="xml">
-            <xpath expr="//field[@name='duration']" position="before">
-                <field name="time_out" widget="float_time"/>
-            </xpath>
-                  
-        </field>
-    </record>
-
-    <record id="b_mrp_workcenter_line_pivot" model="ir.ui.view">
-        <field name="name">b_mrp_workcenter_line_pivot</field>
-        <field name="model">mrp.workorder</field>
-        <field name="inherit_id" ref="mrp.workcenter_line_pivot"/>
-        <field name="arch" type="xml">
-            <xpath expr="//field[@name='duration']" position="before">
-                <field name="time_out_total"/>
+                    <button name="button_scrap" type="object" string="" class="btn-primary" attrs="{'invisible': [('state', 'in', ('cancel', 'draft'))]}" icon="fa-trash-o"/>
+                    <button name="action_desecho" string=""  class="btn-primary" type="object" icon="fa-arrows-v" context="{'module' : 'betta_mrp_scrap'}"/>
                 
             </xpath>
-                  
+
         </field>
     </record>
+ 
+    
+ 
 
 
-
-
-
-  
   </data>
 </odoo>
